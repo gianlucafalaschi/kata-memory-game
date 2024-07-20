@@ -1,0 +1,105 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL */
+
+main {
+    display: flex;
+}
+
+/* LEFT COLUMN */
+.game-column {
+    width:80%;
+    height: 100vh;
+    background-color: rgb(187, 210, 230);
+    position: relative;
+}
+
+#grid {
+    width: 800px;
+    height: 600px;
+    background-color: aqua;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+/*  CARD */
+.card-square {
+    width:200px;
+    height:200px;
+    cursor: pointer;
+}
+
+.card-square img {
+    width: 100%;
+}
+
+.back-face {
+    display: block;
+}
+
+.front-face {
+    display: none;
+}
+
+.back-face.clicked {
+    display: none;
+}
+
+.front-face.clicked {
+    display: block;
+}
+
+
+/* RIGHT COLUMN */
+.points-column {
+    width:20%;
+    height: 100vh;
+    background-color: #2424E3;
+}
+
+.container-80 {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    font-weight: bold;
+}
+
+.logo-container {
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.logo-container .logo-img {
+    width: 100%;
+    display: block;
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    margin-bottom: 15px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.button-container #start-button {
+    width: 100px;
+    height: 40px;
+}
