@@ -1,12 +1,15 @@
 const cards = document.querySelectorAll('.card-square');
+let errorsCounter = document.getElementById('errors-counter');
 
 let cardIsFlipped = false;
 let gameIsBlocked = false;
 let firstCard;
 let secondCard;
+let errorsCount = 0;
 
 
-//console.log(cards);
+errorsCounter.innerHTML = errorsCount;
+
 
 for(let i = 0; i < cards.length; i++) {
     const card = cards[i];
@@ -21,8 +24,7 @@ function flipCard(){
     // se gameIsBlocked è true, il resto della funzione non viene eseguito 
     if(gameIsBlocked) return;
     this.classList.toggle('clicked');
-    //console.log('I was clicked');
-    //console.log(this);
+   
 
     // al primo click (cardIsFlipped è false) 
     if(!cardIsFlipped){
@@ -48,6 +50,7 @@ function checkIfMatching(){
         disableCardClick();
     }else { // altrimenti se le 2 carte sono diverse rigiro entrambe le carte dopo 1 secondo
         unflipCards();
+        errorsCounter.innerHTML = errorsCount;
     }
 };
 
@@ -67,5 +70,6 @@ function unflipCards(){
 
         gameIsBlocked = false;
     }, "1000");
-
+    // aumenta di uno il contatore degli errori
+    errorsCount++;
 };
