@@ -12,8 +12,7 @@ for(let i = 0; i < cards.length; i++) {
 
 //Funzione che gira la carta
 function flipCard(){
-    this.firstElementChild.classList.toggle('clicked');
-    this.firstElementChild.nextElementSibling.classList.toggle('clicked');
+    this.classList.toggle('clicked');
     console.log('I was clicked');
     console.log(this);
 } 

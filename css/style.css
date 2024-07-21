@@ -44,19 +44,19 @@ main {
     width: 100%;
 }
 
-.back-face {
+.card-square .back-face {
     display: block;
 }
 
-.front-face {
+.card-square .front-face {
+    display: none;
+}
+/* gestione click sulla carta */
+.card-square.clicked .back-face {
     display: none;
 }
 
-.back-face.clicked {
-    display: none;
-}
-
-.front-face.clicked {
+.card-square.clicked .front-face {
     display: block;
 }
 
