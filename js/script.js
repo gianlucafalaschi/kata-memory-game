@@ -38,17 +38,21 @@ function flipCard(){
         /* console.log(cardIsFlipped);
         console.log(secondCard);
         console.log(secondCard.dataset.image); */
-
-        // se le 2 carte sono uguali rimuovo l'addEventListener dalle carte
-        if(firstCard.dataset.image == secondCard.dataset.image) {
-            firstCard.removeEventListener('click', flipCard);
-            secondCard.removeEventListener('click', flipCard);
-        }else { // altrimenti se le 2 carte sono diverse rigiro entrambe le carte dopo 1 secondo
-            setTimeout(() => {
-                firstCard.classList.remove('clicked');
-                secondCard.classList.remove('clicked');
-              }, "1000");
-        }
-        
+       
+        cardsAreMatching();
     }
-} 
+}; 
+
+// funzione che controlla se le due carte girate sono uguali
+function cardsAreMatching(){
+    // se le 2 carte sono uguali rimuovo l'addEventListener dalle carte
+    if(firstCard.dataset.image == secondCard.dataset.image) {
+        firstCard.removeEventListener('click', flipCard);
+        secondCard.removeEventListener('click', flipCard);
+    }else { // altrimenti se le 2 carte sono diverse rigiro entrambe le carte dopo 1 secondo
+        setTimeout(() => {
+            firstCard.classList.remove('clicked');
+            secondCard.classList.remove('clicked');
+          }, "1000");
+    }
+};
