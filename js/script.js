@@ -1,17 +1,16 @@
 const cards = document.querySelectorAll('.card-square');
 let errorsCounter = document.getElementById('errors-counter');
+const startGameButton = document.getElementById('start-button');
 
 let cardIsFlipped = false;
 let gameIsBlocked = false;
 let firstCard;
 let secondCard;
 let errorsCount = 0;
-
+ // array di numeri casuali per l'ordine delle cards
+ let randomNumberArray = [];
 
 errorsCounter.innerHTML = errorsCount;
-
-// array di numeri casuali per l'ordine delle cards
-let randomNumberArray = [];
 
 randomNumberArray = getIntegerArray(0, 12, cards.length);
 
@@ -48,7 +47,7 @@ function flipCard(){
     }
 }; 
 
-// funzione che controlla se le due carte girate sono uguali
+// Funzione che controlla se le due carte girate sono uguali
 function checkIfMatching(){
     // se le 2 carte sono uguali rimuovo l'addEventListener dalle carte
     if(firstCard.dataset.image == secondCard.dataset.image) {
@@ -84,7 +83,7 @@ function unflipCards(){
 
 function getIntegerArray(min, max, numberOfCards) {
     let randomNumberArray = [];
-    // fino a che l'array non contiene 12 elementi 
+    // fino a che l'array non contiene la quantita' delle carte 
     let i = 1;
     while(i < numberOfCards){
         // creo un numero random compreso tra min e max(max non incluso)
@@ -98,4 +97,4 @@ function getIntegerArray(min, max, numberOfCards) {
     }
 
     return randomNumberArray;
-}
+};
