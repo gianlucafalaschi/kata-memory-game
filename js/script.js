@@ -85,7 +85,7 @@ function getIntegerArray(min, max, numberOfCards) {
     let randomNumberArray = [];
     // fino a che l'array non contiene la quantita' delle carte 
     let i = 1;
-    while(i < numberOfCards){
+    while(i <= numberOfCards){
         // creo un numero random compreso tra min e max(max non incluso)
         let randomNumber = Math.floor(Math.random() * (max - min) ) + min;
         // se il numero random non e' gia contenuto nell'array allora lo pusho nell'array
