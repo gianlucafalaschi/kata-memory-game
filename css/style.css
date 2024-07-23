@@ -26,6 +26,16 @@ main {
 .game-column {
     width:80%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+.game-column .win-message {
+    color:white ;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 #grid {

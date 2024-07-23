@@ -7,7 +7,8 @@ let secondCard;
 let errorsCount = 0;
  // array di numeri casuali per l'ordine delle cards
 let randomNumberArray = [];
-
+const foundCardsArray = [];
+const gameColumn = document.querySelector('.game-column');
 
 errorsCounter.innerHTML = errorsCount;
 
@@ -48,9 +49,19 @@ function flipCard(){
 
 // Funzione che controlla se le due carte girate sono uguali
 function checkIfMatching(){
-    // se le 2 carte sono uguali rimuovo l'addEventListener dalle carte
+    // se le 2 carte sono uguali 
     if(firstCard.dataset.image == secondCard.dataset.image) {
+        // rimuovo l'addEventListener dalle carte
         disableCardClick();
+        //pusho le due carte in un array
+        foundCardsArray.push(firstCard, secondCard);
+        // se l'array delle carte indovinate contiene lo stesso numero di elementi di cards
+        if(foundCardsArray.length == cards.length){
+            const victoryMessage = document.createElement("h1");
+            victoryMessage.innerHTML = 'Hai vinto!';
+            victoryMessage.classList.add('win-message');
+            gameColumn.append(victoryMessage);
+        };
     }else { // altrimenti se le 2 carte sono diverse rigiro entrambe le carte dopo 1 secondo
         unflipCards();
         errorsCounter.innerHTML = errorsCount;
