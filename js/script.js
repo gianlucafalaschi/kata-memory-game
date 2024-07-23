@@ -1,14 +1,13 @@
 const cards = document.querySelectorAll('.card-square');
 let errorsCounter = document.getElementById('errors-counter');
-const startGameButton = document.getElementById('start-button');
-
 let cardIsFlipped = false;
 let gameIsBlocked = false;
 let firstCard;
 let secondCard;
 let errorsCount = 0;
  // array di numeri casuali per l'ordine delle cards
- let randomNumberArray = [];
+let randomNumberArray = [];
+
 
 errorsCounter.innerHTML = errorsCount;
 
