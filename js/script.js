@@ -10,9 +10,15 @@ let errorsCount = 0;
 
 errorsCounter.innerHTML = errorsCount;
 
+// array di numeri casuali per l'ordine delle cards
+let randomNumberArray = [];
+
+randomNumberArray = getIntegerArray(0, 12, cards.length);
 
 for(let i = 0; i < cards.length; i++) {
     const card = cards[i];
+    // assegna ad ogni card un ordine casuale
+    card.style.order = randomNumberArray[i];
     card.addEventListener('click', flipCard);
 }
 
@@ -24,7 +30,6 @@ function flipCard(){
     // se gameIsBlocked è true, il resto della funzione non viene eseguito 
     if(gameIsBlocked) return;
     this.classList.toggle('clicked');
-   
 
     // al primo click (cardIsFlipped è false) 
     if(!cardIsFlipped){
@@ -38,7 +43,7 @@ function flipCard(){
         cardIsFlipped = false;
         // la carta cliccata è secondCard
         secondCard = this;
-       
+
         checkIfMatching();
     }
 }; 
@@ -73,3 +78,24 @@ function unflipCards(){
     // aumenta di uno il contatore degli errori
     errorsCount++;
 };
+
+// Funzione che crea un numero intero tra min e max (max escluso)  
+// e lo pusha in un array se il numero non e' gia' presente
+
+function getIntegerArray(min, max, numberOfCards) {
+    let randomNumberArray = [];
+    // fino a che l'array non contiene 12 elementi 
+    let i = 1;
+    while(i < numberOfCards){
+        // creo un numero random compreso tra min e max(max non incluso)
+        let randomNumber = Math.floor(Math.random() * (max - min) ) + min;
+        // se il numero random non e' gia contenuto nell'array allora lo pusho nell'array
+        if(!randomNumberArray.includes(randomNumber)){
+            randomNumberArray.push(randomNumber);
+            i++;
+        };
+        
+    }
+
+    return randomNumberArray;
+}
