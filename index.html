@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Memory Game</title>
 </head>
+
 <body>
     <main>
         <!-- GAME COLUMN -->
@@ -64,23 +70,24 @@
 
         <!-- START - POINTS COLUMN -->
         <section class="points-column">
-                <div class="container-80">
-                    <div class="logo-container">
-                        <img class="logo-img" src="img/logo.png" alt="logo">
+            <div class="container-80">
+                <div class="logo-container">
+                    <img class="logo-img" src="img/logo.png" alt="logo">
+                </div>
+                <div>
+                    <h1 class="title">Memory Game</h1>
+                    <p class="subtitle">Abbina i simboli uguali e scopri tutta la griglia</p>
+                    <div class="errors-container">
+                        <span>Errori:</span> <span id="errors-counter"></span>
                     </div>
-                    <div>
-                        <h1 class="title">Memory Game</h1>
-                        <p class="subtitle">Abbina i simboli uguali e scopri tutta la griglia</p>
-                        <div class="errors-container">
-                            <span>Errori:</span> <span id="errors-counter"></span>
-                        </div>
-                        <div class="button-container">
-                            <button id="start-button" type="button">Start</button>
-                        </div>
+                    <div class="button-container">
+                        <button id="start-button" type="button">START</button>
                     </div>
                 </div>
+            </div>
         </section>
     </main>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
+
 </html>

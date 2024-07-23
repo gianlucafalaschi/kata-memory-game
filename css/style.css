@@ -6,26 +6,36 @@
     box-sizing: border-box;
 }
 
+/*  TYPOGRAPHY */
+
+body {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
 /* GENERAL */
 
 main {
     display: flex;
+    height: 100vh;
+    background-color: #2424E3;
 }
 
 /* LEFT COLUMN */
 .game-column {
     width:80%;
-    background-color: rgb(187, 210, 230);
+    display: flex;
 }
 
 #grid {
     width: 800px;
-    height: 600px;
-    background-color: aqua;
-    margin: 50px auto;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    align-content: center;
 }
 /*  CARD */
 .card-square {
@@ -58,7 +68,7 @@ main {
 /* RIGHT COLUMN */
 .points-column {
     width:20%;
-    background-color: #2424E3;
+    display: flex;
 }
 
 .container-80 {
@@ -66,11 +76,12 @@ main {
     margin: 0 auto;
     color: white;
     font-weight: bold;
+    align-content: center;
+
 }
 
 .logo-container {
-    margin-top: 50px;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 }
 
 .logo-container .logo-img {
@@ -79,20 +90,24 @@ main {
 }
 
 .title {
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 }
 
 .subtitle {
-    margin-bottom: 15px;
+    margin-bottom: 40px;
+    line-height: 25px;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .button-container #start-button {
     width: 100px;
     height: 40px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: bold;
+    color: #F70D68;
 }
